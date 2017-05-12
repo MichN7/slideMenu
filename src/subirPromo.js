@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import * as firebase from 'firebase'
-
+const x="https://designcode.io/images/bg/footer.jpg";
 
 firebase.initializeApp ({
   apiKey: "AIzaSyCoUdVIu_yMekq4UxPuEW7jY4pNqTLXt90",
@@ -16,7 +16,8 @@ class SubirPromo extends Component {
   constructor(){
     super();
     this.state={
-      uploadStatus:0
+      uploadStatus:0,
+      picture: x
 
     }
   }
@@ -31,14 +32,16 @@ task.on('state_changed', (snapshot) => {
       this.setState({
         uploadStatus: percentage,
 
-      }), (error) => {
+      }),
+
+      (error) => {
       console.error(error.message)
     },
-      ()=>{
+      
         this.setState({
           picture: task.snapshot.downloadURL
         })
-      }
+
     })
   }
 
