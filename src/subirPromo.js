@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import * as firebase from 'firebase'
+import './subirPromo.css';
 const x="https://designcode.io/images/bg/footer.jpg";
 
 firebase.initializeApp ({
@@ -24,7 +25,7 @@ class SubirPromo extends Component {
 
 handleOnChange(event){
 const file= event.target.files[0];
-const storageRef = firebase.storage().ref(`pictures/${file.name}`);
+const storageRef = firebase.storage().ref(`fotos/${file.name}`);
 const task = storageRef.put(file);
 
 task.on('state_changed', (snapshot) => {
@@ -37,7 +38,7 @@ task.on('state_changed', (snapshot) => {
       (error) => {
       console.error(error.message)
     },
-      
+
         this.setState({
           picture: task.snapshot.downloadURL
         })
@@ -52,7 +53,13 @@ task.on('state_changed', (snapshot) => {
       {this.state.uploadStatus}%
       </progress>
       <input type='file' onChange={this.handleOnChange.bind(this)}/>
-      <img width='200' src={this.state.picture}/>
+      <div id='gallery'>
+      <img width='20' src={this.state.picture}/>
+      <img width='20' src={this.state.picture}/>
+      <img width='20' src={this.state.picture}/>
+      <img width='20' src={this.state.picture}/>
+      <img width='20' src={this.state.picture}/>
+      </div>
       </div>
     );
   }

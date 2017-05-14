@@ -1,0 +1,15 @@
+#gallery img{
+
+  width: 30%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+#gallery img:hover{
+  
+    filter: grayscale(0%);
+
+}
+#gallery{
+  width: 80%;
+  text-align: center;
+}
