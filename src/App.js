@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
 import PromoActiva from './promoActiva.js';
@@ -15,7 +15,7 @@ class App extends Component {
       <Router>
         <div className="contenedor">
         <div id="barraLateral">
-         <ul>
+         <ul id='lista'>
            <li><Link to="/">Promocion actual</Link></li>
            <li><Link to="/subir-promo">Subir Promocion</Link></li>
            <li><Link to="/historial-promos">Historial promociones</Link></li>
@@ -27,7 +27,7 @@ class App extends Component {
         <Route exact path="/" component={PromoActiva} />
         <Route path="/subir-promo" component={SubirPromo} />
         <Route path="/historial-promos" component={HistorialPromos} />
-        <Route path="/analitics" component={Home}  />
+        <Route path="/analitics" component={Home} />
           </div>
             </div>
           </Router>

@@ -25,13 +25,13 @@
   font-family: inherit;
 
 }
-.contenedor ul li{
+.contenedor #lista li{
   width: 100%;
   padding: 25% 0 25% 0;
   border: 1px solid white;
 
 }
-.contenedor ul{
+.contenedor #lista{
   list-style: none;
   background-color: #868686;
   padding: 0;
